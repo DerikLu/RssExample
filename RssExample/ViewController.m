@@ -14,6 +14,18 @@
 
 @implementation ViewController
 
+@dynamic viewModel;
+
+- (instancetype)init {
+    self = [super init];
+    
+    if (self) {
+        self.viewModel = [ViewModel new];
+    }
+    
+    return self;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
