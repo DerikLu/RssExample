@@ -10,7 +10,7 @@
 #import "AlbumMTL.h"
 
 @interface ViewModel () {
-    NSInteger _index;
+    
 }
 
 @end
@@ -28,7 +28,7 @@
 }
 
 - (void)getAlbum:(NSInteger)top {
-    _index = top;
+    self.index = top;
     
     [[self.networking getTopAlbum:[NSString stringWithFormat:@"%ld", (long)top]] subscribeNext:^(id x) {
         NSError *err;
@@ -41,7 +41,7 @@
 }
 
 - (void)loadMore {
-    [self getAlbum:_index + 20];
+    [self getAlbum:self.index + 10];
 }
 
 @end
