@@ -6,10 +6,12 @@
 //  Copyright © 2015年 Derik Lu. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "SuperViewController.h"
+#import "ViewModel.h"
 
-@interface ViewController : UIViewController
+@interface ViewController : SuperViewController
 
+@property (strong, nonatomic) ViewModel *viewModel;
 
 @end
 
