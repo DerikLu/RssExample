@@ -12,7 +12,9 @@
 
 @interface AlbumMTL : MTLModel<MTLJSONSerializing>
 
-@property (strong, nonatomic) NSArray *imageDict;
+
+@property (strong, nonatomic) NSArray *imageArray;
+@property (strong, nonatomic) NSString *imageUrlString;
 @property (strong, nonatomic) NSDictionary *nameDict;
 @property (strong, nonatomic) NSDictionary *artistDict;
 

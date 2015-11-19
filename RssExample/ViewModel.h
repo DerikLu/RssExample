@@ -10,4 +10,10 @@
 
 @interface ViewModel : SuperViewModel
 
+@property (strong, nonatomic) NSArray *array;
+
+- (void)getAlbum:(NSInteger)top;
+
+- (void)loadMore;
+
 @end
