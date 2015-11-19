@@ -11,6 +11,7 @@
 @interface ViewModel : SuperViewModel
 
 @property (strong, nonatomic) NSArray *array;
+@property (assign, nonatomic) NSInteger index;
 
 - (void)getAlbum:(NSInteger)top;
 

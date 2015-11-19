@@ -39,7 +39,6 @@
 }
 
 - (void)initView {
-    self.title = @"Top Album";
     self.view.backgroundColor = [UIColor blackColor];
     
     @weakify(self);
@@ -99,6 +98,11 @@
         @strongify(collectionView);
         [collectionView reloadData];
     }];
+    
+    [RACObserve(self.viewModel, index) subscribeNext:^(id x) {
+        @strongify(self);
+        self.title = [NSString stringWithFormat:@"Top %@ ", x];
+    }];
 }
 
 #pragma mark - UICollectionView Datasource & Delegate
@@ -114,8 +118,6 @@
     AlbumCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"CELL" forIndexPath:indexPath];
     
     AlbumMTL *album = (AlbumMTL *)self.viewModel.array[indexPath.row];
-    
-    self.title = [NSString stringWithFormat:@"Top %ld", indexPath.row];
     
     [cell setAlbum:album];
     
